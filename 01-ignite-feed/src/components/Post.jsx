@@ -1,3 +1,5 @@
+import { Avatar } from './Avatar'
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 export const Post = (props) => {
@@ -6,9 +8,7 @@ export const Post = (props) => {
       <article className={styles.post}>
         <header>
           <div className={styles.author}>
-            <img 
-              className={styles.avatar}
-              src="https://github.com/mayraamaral.png" />
+            <Avatar src="https://github.com/mayraamaral.png" />
               <div className={styles.authorInfo}>
                 <strong>Mayra Amaral</strong>
                 <span>Developer</span>
@@ -22,6 +22,20 @@ export const Post = (props) => {
           <p>Acabei de subir mais um projeto no meu portfolio.</p>
           <p><a href="#">mayraamaral.me</a></p>
           <p><a href="#">#novoprojeto #portfilio</a></p>
+        </div>
+
+        <form className={styles.commentForm}>
+          <strong>Deixe seu comentário</strong>
+          <textarea placeholder='Deixe um comentário'></textarea>
+          <footer>
+            <button type="submit">Publicar</button>
+          </footer>
+        </form>
+
+        <div className={styles.commentList}>
+          <Comment />
+          <Comment />
+          <Comment />
         </div>
       </article>
     </div>
